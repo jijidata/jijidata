@@ -1,0 +1,8 @@
+D:\Documents\GitHub\jijidata\02.查找文件_py3.3.py
+D:\Documents\GitHub\jijidata\07.账户注册_easygui_py3.3.py
+D:\Documents\GitHub\jijidata\08.一个极其简单的记事本_easygui_py3.3.py
+D:\Documents\GitHub\jijidata\01.列举目录下文件大小_py3.3.py
+D:\Documents\GitHub\jijidata\03.查找符合扩展名文件，其结果以文本形式保存在查找根目录中.py
+D:\Documents\GitHub\jijidata\04.查找文本文件中关键词_未完成.py
+D:\Documents\GitHub\jijidata\05.通讯录小程序_py3.3.py
+D:\Documents\GitHub\jijidata\06.猜数字小游戏_easygui_py3.3.py

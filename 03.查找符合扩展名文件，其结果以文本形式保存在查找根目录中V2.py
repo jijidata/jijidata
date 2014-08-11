@@ -1,13 +1,21 @@
 import os
+import easygui as g
 
-start_dir = str(input("请输入待查找的初始目录："))
-extension = str('.'+input("请输入要查找扩展名(不需要打入点号)："))
+
+start_dir = g.diropenbox(msg = "请选择一个文件夹",title = "浏览文件夹")
+extension_py = ".py"
+extension_cpp= ".cpp"
+extension_lua= ".lua"
+extension_h= ".h"
+
               
 all_dir = []           #所有的目录
 all_file = []           #所有的文件
 all_name=[]         #所有文件名
 all_extension=[]    #所有扩展名
 find_file = []         #符合所查找的文件名.扩展名
+target_file = []     #符合所查找的文件的路径
+txt = []
 f = open("%s\\result.txt"%start_dir, "w")
 
 
@@ -43,8 +51,11 @@ def search_file(files):
     '''遍历所有的查找目录，列出文件，若存在，打印出目录名'''
     for x in all_dir:
          if files in os.listdir(x):
-            print("%s在%s目录下" %(files,x))            
-            f.write("%s\\%s\n"%(x,files))
+            #print("%s在%s目录下" %(files,x))            
+            txt.append(("%s\\%s\n"%(x,files)))
+   
+            
+
            
 def search(find_file):
     '''判断是否目录下是否含有此文件，如果有，则输出，没有则告知~'''
@@ -53,14 +64,20 @@ def search(find_file):
         for n in find_files:
             search_file(n)
     else:
-        print("该目录下没有此类型的文件！")
-        
-list_all_dir(start_dir)
-list_name_extension(all_file)
-find_extension(extension)
-search(find_file)
-f.close()
+        g.msgbox(msg = "该目录下没有此类型的文件")
+
+
 
     
     
+list_all_dir(start_dir)
+list_name_extension(all_file)
+find_extension(extension_py)
+find_extension(extension_cpp)
+find_extension(extension_lua)
+find_extension(extension_h)
+search(find_file)
+f.close()
+
+g.textbox(msg="共有%d文件符合"%len(find_file) ,text =txt)        
 
